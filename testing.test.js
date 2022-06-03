@@ -2,6 +2,7 @@ const capitalise = require('./capitalise')
 const reverseString = require('./reverseString')
 const calculator = require('./calculator')
 const caesarCipher = require('./caesarCipher')
+const analyseArray = require('./analyseArray')
 
 test('testing capitalisation of string', () => {
     expect(capitalise('varun')).toBe("Varun")
@@ -22,4 +23,13 @@ test('testing caesar cipher encryption', () => {
     expect(caesarCipher("FREE PIZZA!")).toBe('SERR CVMMN!')
     expect(caesarCipher("FREE LOVE?")).toBe("SERR YBIR?")
     expect(caesarCipher('THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG.')).toBe('GUR DHVPX OEBJA SBK WHZCF BIRE GUR YNML QBT.')
+})
+
+test('analysing array results', () => {
+    expect(analyseArray([1,8,3,4,2,6])).toEqual({
+        average: 4,
+        min: 1,
+        max: 8,
+        length: 6
+      })
 })
